@@ -6,7 +6,7 @@ public class FileRead {
 
 public static void main(String[] args) {
 		// TODO Auto-generated method stub
-File db=new File("chess.csv");
+File db=new File("Database/chess.csv");
 int count=0;
 try {
 Scanner sc= new Scanner(db);
