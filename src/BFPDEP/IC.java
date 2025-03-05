@@ -3,7 +3,7 @@ package BFPDEP;
 import java.util.Arrays;
 
 public class IC {
-public static void individualCount() {
+public static Integer[] individualCount() {
 	MainClass mc=new MainClass();
 	int i,ic,halfMax,j,k=0;
 	String[] data=FileRead.readFile(mc.filePath);
@@ -22,8 +22,6 @@ public static void individualCount() {
 		IC[k]=ic;
 		k++;
 		}
-	for(int l=0;l<IC.length;l++) {
-	System.out.print(IC[l]+" ");
-	}
+	return IC;
 }}
 
