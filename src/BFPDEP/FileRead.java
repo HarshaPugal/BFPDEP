@@ -4,24 +4,32 @@ import java.io.FileNotFoundException;
 import java.io.File;
 public class FileRead {
 
-public static void main(String[] args) {
-		// TODO Auto-generated method stub
-File db=new File("Database/chess.csv");
-int count=0;
+public static String[] readFile(String filePath) {
+File db=new File(filePath);
+int count=0,i,j;
+String[] arr;
 try {
 Scanner sc= new Scanner(db);
 while(sc.hasNextLine()) {
 	count++;
-	String data=sc.nextLine();
-	System.out.println(data);
+	sc.nextLine();
 }
 sc.close();
+sc= new Scanner(db);
+i=0;
+arr=new String[count];
+while(sc.hasNextLine()) {
+	arr[i]=sc.nextLine();
+	i++;
+}
+sc.close();
+return arr;
 }
 catch(FileNotFoundException e){
 	System.out.println("File Not Found");
 	e.printStackTrace();
+	return new String[0];
 }
-System.out.println(count);
+}
 }
 
-}
