@@ -14,6 +14,9 @@ public class MainClass {
 		System.out.println("updated="+updated);
 		ArrayList<Integer> uindividualCount=IC.individualCount(uFilePath);
 		System.out.println(uindividualCount);
-	}
+		ArrayList<ArrayList<Integer>> bvr=BVR.bitVector(uniqueList, updated);
+		for(int i=0;i<bvr.size();i++) {
+		System.out.println(uniqueList.get(i)+"="+bvr.get(i));
+	}}
 }
 

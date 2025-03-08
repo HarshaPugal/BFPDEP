@@ -8,7 +8,8 @@ public class Segmentation {
 		int i,j,g,halfMax;
 		String[] a;
 		ArrayList<Integer> uniqueList=UniqueItems.uniqueItem(data);
-		halfMax=Math.round((uniqueList.size())/2);
+		halfMax=Math.round((float)(uniqueList.size())/2);
+		System.out.println(halfMax);
 		ArrayList<Integer> temp;
 		ArrayList<String> discard=new ArrayList<String>();
 		ArrayList<String> updated=new ArrayList<String>();
