@@ -6,7 +6,7 @@ public class FileRead {
 
 public static String[] readFile(String filePath) {
 File db=new File(filePath);
-int count=0,i,j;
+int count=0,i;
 String[] arr;
 try {
 Scanner sc= new Scanner(db);
