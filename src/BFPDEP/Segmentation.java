@@ -22,12 +22,13 @@ public class Segmentation {
 		
 try {
 	File file=new File("Database/discard.csv");
-		FileWriter ds=new FileWriter(file,true);
-		new FileWriter(file,false).close();
-		for(i=0;i<discard.size();i++) {
-			ds.write(discard.get(i)+"\n");
+		try (FileWriter ds = new FileWriter(file,true)) {
+			new FileWriter(file,false).close();
+			for(i=0;i<discard.size();i++) {
+				ds.write(discard.get(i)+"\n");
+			}
+			ds.close();
 		}
-		ds.close();
 }
 catch(IOException e){
 	System.out.println("Error");
