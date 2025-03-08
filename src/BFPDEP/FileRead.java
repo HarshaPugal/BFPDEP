@@ -2,25 +2,16 @@ package BFPDEP;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
+import java.util.ArrayList;
 public class FileRead {
 
-public static String[] readFile(String filePath) {
+public static ArrayList<String> readFile(String filePath) {
 File db=new File(filePath);
-int count=0,i;
-String[] arr;
+ArrayList<String> arr=new ArrayList<String>();
 try {
 Scanner sc= new Scanner(db);
 while(sc.hasNextLine()) {
-	count++;
-	sc.nextLine();
-}
-sc.close();
-sc= new Scanner(db);
-i=0;
-arr=new String[count];
-while(sc.hasNextLine()) {
-	arr[i]=sc.nextLine();
-	i++;
+	arr.add(sc.nextLine());
 }
 sc.close();
 return arr;
@@ -28,7 +19,7 @@ return arr;
 catch(FileNotFoundException e){
 	System.out.println("File Not Found");
 	e.printStackTrace();
-	return new String[0];
+	return new ArrayList<String>();
 }
 }
 }
