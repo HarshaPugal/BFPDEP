@@ -11,14 +11,10 @@ public class Segmentation {
 		halfMax=Math.round((uniqueList.size())/2);
 		ArrayList<Integer> temp;
 		ArrayList<String> discard=new ArrayList<String>();
-		ArrayList<String> actual=new ArrayList<String>();
 		ArrayList<String> updated=new ArrayList<String>();
 		for(i=0;i<IC.size();i++) {
 			if(IC.get(i)>=halfMax) {
 				discard.add(data.get(i));
-			}
-			else {
-				actual.add(data.get(i));
 			}
 		}
 		for(i=0;i<discard.size();i++) {
