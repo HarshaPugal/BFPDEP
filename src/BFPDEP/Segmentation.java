@@ -37,8 +37,5 @@ Map<String,ArrayList<String>> result =new HashMap<>();
 result.put("discard",discard);
 result.put("actual",actual);
 return result;
-//for(i=0;i<actual.size();i++) {
-//	System.out.println(actual.get(i));
-//}
 	}
 }
