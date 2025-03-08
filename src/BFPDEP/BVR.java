@@ -1,5 +1,6 @@
 package BFPDEP;
 import java.util.ArrayList;
+import java.util.Map;
 public class BVR {
 	public static ArrayList<ArrayList<Integer>> bitVector(ArrayList<Integer> uniqueList,ArrayList<String> updated){
 		int i,j,k=0;

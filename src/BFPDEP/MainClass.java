@@ -9,14 +9,24 @@ public class MainClass {
 		System.out.println("unique="+uniqueList);
 		System.out.println("Original="+data);
 		ArrayList<Integer> individualCount=IC.individualCount(filePath);
-		System.out.println(individualCount);
-		ArrayList<String> updated=Segmentation.partition(individualCount, data);
+//		System.out.println(individualCount);
+		Map<String,ArrayList<String>> result=Segmentation.partition(individualCount, data);
+		ArrayList<String>updated=result.get("updated");
+		ArrayList<String>actual=result.get("actual");
+		ArrayList<String>discard=result.get("discard");
 		System.out.println("updated="+updated);
 		ArrayList<Integer> uindividualCount=IC.individualCount(uFilePath);
-		System.out.println(uindividualCount);
-		ArrayList<ArrayList<Integer>> bvr=BVR.bitVector(uniqueList, updated);
-		for(int i=0;i<bvr.size();i++) {
-		System.out.println(uniqueList.get(i)+"="+bvr.get(i));
-	}}
+//		System.out.println(uindividualCount);
+		ArrayList<ArrayList<Integer>> actualBvr=BVR.bitVector(uniqueList, actual);
+		ArrayList<ArrayList<Integer>> discardBvr=BVR.bitVector(uniqueList, discard);
+		System.out.println("Actual BVR");
+		for(int i=0;i<actualBvr.size();i++) {
+		System.out.println(uniqueList.get(i)+"="+actualBvr.get(i));
+		}
+		System.out.println("Discard BVR");
+		for(int i=0;i<discardBvr.size();i++) {
+		System.out.println(uniqueList.get(i)+"="+discardBvr.get(i));
+		}
+	}
 }
 

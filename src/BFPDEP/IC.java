@@ -15,7 +15,7 @@ public class IC {
 			total=total+ic;
 			IC.add(ic);
 		}
-		System.out.println(total);
+//		System.out.println(total);
 		return IC;
 	}
 }
