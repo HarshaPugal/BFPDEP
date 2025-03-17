@@ -1,8 +1,8 @@
 package BFPDEP;
 import java.util.ArrayList;
-import java.util.Map;
+import java.util.HashMap;
 public class BVR {
-	public static ArrayList<ArrayList<Integer>> bitVector(ArrayList<Integer> uniqueList,ArrayList<String> updated){
+	public static HashMap<Integer, ArrayList<Integer>> bitVector(ArrayList<Integer> uniqueList,ArrayList<String> updated){
 		int i,j,k=0;
 		String[] a;
 		ArrayList<ArrayList<Integer>> bvr=new ArrayList<ArrayList<Integer>>();
@@ -26,6 +26,12 @@ public class BVR {
 			}
 			bvr.add(inbvr);
 		}
-		return bvr;
+		  HashMap<Integer, ArrayList<Integer>> bvrMap = new HashMap<>();
+	        for (int index = 0; index < uniqueList.size(); index++) {
+	            bvrMap.put(uniqueList.get(index), bvr.get(index));
+	        }
+
+	        return bvrMap;
+	
 	}
 }
